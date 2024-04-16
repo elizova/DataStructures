@@ -15,4 +15,3 @@ public:
     int top();
     void print(int index, int depth);
 };
-

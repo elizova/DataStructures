@@ -51,4 +51,3 @@ public:
         std::cout << heap.top();
     }
 };
-
