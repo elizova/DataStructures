@@ -16,14 +16,14 @@ private:
         heap = h;
     }
 public:
-    static void test0() {
+    static void create_heap() {
         Heap heap({});
         heap_maker(heap);
         heap.print(0, 0);
         delimiter();
     }
-    
-    static void test1() {
+
+    static void insert_into_heap() {
         Heap heap({});
         heap_maker(heap);
         heap.push(35);
@@ -31,7 +31,7 @@ public:
         delimiter();
     }
 
-    static void test2() {
+    static void remove_from_heap() {
         Heap heap({});
         heap_maker(heap);
         heap.pop();
@@ -39,21 +39,21 @@ public:
         delimiter();
     }
 
-    static void test3() {
+    static void first_element() {
         Heap heap({});
         heap_maker(heap);
         std::cout << heap.top() << std::endl;
         delimiter();
     }
 
-    static void test4() {
+    static void remove_from_emptiness() {
         Heap heap({});
         heap.pop();
         std::cout << heap.top() << std::endl;
         delimiter();
     }
 
-    static void test5() {
+    static void random_elements() {
         Heap heap({});
         std::vector<int> random(1000000);
         std::random_device rd;

@@ -2,17 +2,17 @@
 
 int main() {
 
-    Heap_tests::test0();
+    Heap_tests::create_heap();
 
-    Heap_tests::test1();
+    Heap_tests::insert_into_heap();
 
-    Heap_tests::test2();
+    Heap_tests::remove_from_heap();
 
-    Heap_tests::test3();
+    Heap_tests::first_element();
 
-    Heap_tests::test4();
+    Heap_tests::remove_from_emptiness();
 
-    Heap_tests::test5();
+    Heap_tests::random_elements();
 
     return 0;
 }
