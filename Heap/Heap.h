@@ -1,9 +1,4 @@
-//
-// Created by User on 17.03.2024.
-//
-
-#ifndef UNTITLED6_HEAP_H
-#define UNTITLED6_HEAP_H
+#pragma once
 #include <iostream>
 #include <vector>
 
@@ -21,5 +16,3 @@ public:
     void print(int index, int depth);
 };
 
-
-#endif //UNTITLED6_HEAP_H

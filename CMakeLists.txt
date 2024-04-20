@@ -4,4 +4,4 @@ project(HeapElizova)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(HeapElizova main.cpp
-	Heap.cpp)
+	Heap/Heap.cpp)

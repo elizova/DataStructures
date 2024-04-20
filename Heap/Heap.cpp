@@ -3,7 +3,7 @@
 //
 #include "Heap.h"
 
-void Heap:: sift_up(int index){
+void Heap::sift_up(int index){
     while((arr[(index-1) / 2] > arr[index]) && index > 0){
         int t = arr[(index-1) / 2];
         arr[(index-1) / 2] = arr[index];
@@ -12,7 +12,7 @@ void Heap:: sift_up(int index){
     }
 }
 
-void Heap:: sift_down(int index){
+void Heap::sift_down(int index){
     int left = 2 * index + 1;
     int right = 2 * index +2;
     int child = left;
@@ -26,31 +26,31 @@ void Heap:: sift_down(int index){
     sift_down(child);
 }
 
-void Heap:: heapify(){
+void Heap::heapify(){
     int n = arr.size();
     for(int i = n/2 - 1; i >= 0; i--){
         sift_down(i);
     }
 }
 
-void Heap:: push(int value) {
+void Heap::push(int value) {
     arr.push_back(value);
     sift_up(arr.size() - 1);
 }
 
-void Heap:: pop() {
+void Heap::pop() {
     if (arr.empty()) return;
     arr[0] = arr.back();
     arr.pop_back();
     if (!arr.empty()) sift_down(0);
 }
 
-int Heap:: top() {
+int Heap::top() {
     if (arr.empty()) return -1;
     return arr[0];
 }
 
-void Heap:: print(int index, int depth){
+void Heap::print(int index, int depth){
     if (index < arr.size()) {
         print(2 * index + 2, depth + 1);
         for (int i = 0; i < depth; ++i) {
