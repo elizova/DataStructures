@@ -10,49 +10,39 @@ private:
         }
         std::cout << std::endl;
     }
-    static void heap_maker(Heap& h){
-        h.push(1);
-        h.push(3);
-        h.push(-5);
-        h.push(48);
-        h.push(-21);
-        h.push(4);
-        h.push(-100);
-        h.push(-15);
-        h.push(47);
-        h.push(22);
     static void heap_maker(Heap& heap) {
+        Heap h({1, 3, -5, 48, -21, 4, -100, -15, 47, 22});
+        heap = h;
     }
 public:
     static void test0(){
         Heap heap;
     static void test0() {
+    static void test0() {
+        Heap heap({});
         heap_maker(heap);
         heap.print(0, 0);
         delimiter();
     }
-    static void test1(){
-        Heap heap;
     
     static void test1() {
+        Heap heap({});
         heap_maker(heap);
         heap.push(35);
         heap.print(0, 0);
         delimiter();
     }
 
-    static void test2(){
-        Heap heap;
     static void test2() {
+        Heap heap({});
         heap_maker(heap);
         heap.pop();
         heap.print(0, 0);
         delimiter();
     }
 
-    static void test3(){
-        Heap heap;
     static void test3() {
+        Heap heap({});
         heap_maker(heap);
         std::cout << heap.top();
     }

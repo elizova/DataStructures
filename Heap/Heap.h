@@ -9,6 +9,9 @@ private:
     void sift_down(int index);
 
 public:
+    Heap(const std::vector<int>& array) : arr(array) {
+        heapify();
+    }
     void heapify();
     void push(int value);
     void pop();
