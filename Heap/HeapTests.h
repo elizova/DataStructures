@@ -4,8 +4,8 @@
 
 class Heap_tests {
 private:
-    static void delimiter(){
-        for(int i = 0; i < 10; ++i){
+    static void delimiter() {
+        for (int i = 0; i < 10; ++i) {
             std::cout << '_';
         }
         std::cout << std::endl;
@@ -21,16 +21,20 @@ private:
         h.push(-15);
         h.push(47);
         h.push(22);
+    static void heap_maker(Heap& heap) {
     }
 public:
     static void test0(){
         Heap heap;
+    static void test0() {
         heap_maker(heap);
         heap.print(0, 0);
         delimiter();
     }
     static void test1(){
         Heap heap;
+    
+    static void test1() {
         heap_maker(heap);
         heap.push(35);
         heap.print(0, 0);
@@ -39,6 +43,7 @@ public:
 
     static void test2(){
         Heap heap;
+    static void test2() {
         heap_maker(heap);
         heap.pop();
         heap.print(0, 0);
@@ -47,6 +52,7 @@ public:
 
     static void test3(){
         Heap heap;
+    static void test3() {
         heap_maker(heap);
         std::cout << heap.top();
     }
