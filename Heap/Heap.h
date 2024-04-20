@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 
-class Heap{
+class Heap {
 private:
     std::vector<int> arr;
     void sift_up(int index);
