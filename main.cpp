@@ -1,28 +1,15 @@
-#include <iostream>
 #include "Heap/Heap.h"
 #include "Heap/HeapTests.h"
 
-void delimiter(){
-    for(int i = 0; i < 10; ++i){
-        std::cout << '_';
-    }
-    std::cout << std::endl;
-}
-
 int main() {
-    Heap h;
-    Heap_tests heap;
 
-    heap.test0(h);
-    delimiter();
+    Heap_tests::test0();
 
-    heap.test1(h);
-    delimiter();
+    Heap_tests::test1();
 
-    heap.test2(h);
-    delimiter();
+    Heap_tests::test2();
 
-    heap.test3(h);
+    Heap_tests::test3();
 
     return 0;
 }

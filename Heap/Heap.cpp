@@ -1,6 +1,3 @@
-//
-// Created by User on 10.04.2024.
-//
 #include "Heap.h"
 
 void Heap::sift_up(int index){
