@@ -1,7 +1,7 @@
 #include "Heap/HeapTests.h"
+#include "BST/BSTTests.h"
 
-int main() {
-
+void heap_tests() {
     Heap_tests::create_heap();
 
     Heap_tests::insert_into_heap();
@@ -13,6 +13,17 @@ int main() {
     Heap_tests::remove_from_emptiness();
 
     Heap_tests::random_elements();
+}
+
+void bst_tests() {
+    BST_tests::create_btree();
+
+    BST_tests::remove_from_btree();
+}
+
+int main() {
+
+    bst_tests();
 
     return 0;
 }

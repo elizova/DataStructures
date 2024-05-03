@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.26)
-project(HeapElizova)
+project(DataStructures)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(HeapElizova main.cpp
-	Heap/Heap.cpp)
+add_executable(DataStructures main.cpp
+	Heap/Heap.cpp BST/BST.cpp)
