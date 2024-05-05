@@ -10,16 +10,11 @@ void BST::insert(int val, Node*& node) {
         node = new Node(val);
         return;
     }
-    else {
-        if (val < node->data) {
-            insert(val, node->left);
-        }
-        else if(val > node->data) {
-            insert(val, node->right);
-        }
-        else {
-            return;
-        }
+    if (val < node->data) {
+        insert(val, node->left);
+    }
+    else if(val > node->data) {
+        insert(val, node->right);
     }
 }
 
@@ -64,13 +59,8 @@ void BST::remove(int val, Node*& node) {
 }
 
 Node*& BST::find_min(Node*& node) {
-    if(node == nullptr) {
+    if(node == nullptr || node->left == nullptr) {
         return node;
     }
-    if(node->left == nullptr) {
-        return node;
-    }
-    else {
-        return find_min(node->left);
-    }
+    return find_min(node->left);
 }

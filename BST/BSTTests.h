@@ -21,7 +21,6 @@ public:
         BST b {};
         bst(b);
         b.remove(2);
-        b.remove(15);\
+        b.remove(15);
     }
 };
-    
