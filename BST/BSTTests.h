@@ -13,11 +13,11 @@ private:
         b.insert(5);
     }
 public:
-    static void create_btree() {
+    static void create_bst() {
         BST b {};
         bst(b);
     }
-    static void remove_from_btree() {
+    static void remove_from_bst() {
         BST b {};
         bst(b);
         b.remove(2);

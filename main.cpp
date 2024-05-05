@@ -16,9 +16,9 @@ void heap_tests() {
 }
 
 void bst_tests() {
-    BST_tests::create_btree();
+    BST_tests::create_bst();
 
-    BST_tests::remove_from_btree();
+    BST_tests::remove_from_bst();
 }
 
 int main() {
