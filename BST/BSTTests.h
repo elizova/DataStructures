@@ -36,7 +36,7 @@ public:
     static void bst_height() {
         BST b {};
         int N = 10;
-        for(int i = 0; i < N; ++i) {
+        for (int i = 0; i < N; ++i) {
             b.insert(i);
         }
         std::cout << height(b.root) << " " << N << std::endl;
@@ -46,11 +46,11 @@ public:
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution<> dis(-300, 300);
-        for(int i = 0; i < 100; ++i) {
+        for (int i = 0; i < 100; ++i) {
             int add = dis(gen);
             b.insert(add);
         }
-        for(int i = 0; i < 100; ++i) {
+        for (int i = 0; i < 100; ++i) {
             int del = dis(gen);
             b.remove(del);
         }
