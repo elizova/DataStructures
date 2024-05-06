@@ -6,14 +6,14 @@ void BST::insert(int val) {
 }
 
 void BST::insert(int val, Node*& node) {
-    if(node == nullptr) {
+    if (node == nullptr) {
         node = new Node(val);
         return;
     }
     if (val < node->data) {
         insert(val, node->left);
     }
-    else if(val > node->data) {
+    else if (val > node->data) {
         insert(val, node->right);
     }
 }
@@ -23,26 +23,26 @@ void BST::remove(int val) {
 }
 
 void BST::remove(int val, Node*& node) {
-    if(node == nullptr) {
+    if (node == nullptr) {
         return;
     }
-    if(val < node->data) {
+    if (val < node->data) {
         remove(val, node->left);
     }
-    if(val > node->data) {
+    if (val > node->data) {
         remove(val, node->right);
     }
-    if(val == node->data) {
+    if (val == node->data) {
         Node* del = nullptr;
-        if(node->left == nullptr && node->right == nullptr) {
+        if (node->left == nullptr && node->right == nullptr) {
             del = node;
             node = nullptr;
         }
-        else if(node->left != nullptr && node->right == nullptr) {
+        else if (node->left != nullptr && node->right == nullptr) {
             del = node;
             node = node->left;
         }
-        else if(node->left == nullptr && node->right != nullptr) {
+        else if (node->left == nullptr && node->right != nullptr) {
             del = node;
             node = node->right;
         }
@@ -51,7 +51,7 @@ void BST::remove(int val, Node*& node) {
             node->data = min->data;
             remove(min->data, node->right);
         }
-        if(del != nullptr) {
+        if (del != nullptr) {
             delete del;
             del = nullptr;
         }
@@ -59,7 +59,7 @@ void BST::remove(int val, Node*& node) {
 }
 
 Node*& BST::find_min(Node*& node) {
-    if(node == nullptr || node->left == nullptr) {
+    if (node == nullptr || node->left == nullptr) {
         return node;
     }
     return find_min(node->left);
