@@ -19,6 +19,10 @@ void bst_tests() {
     BST_tests::create_bst();
 
     BST_tests::remove_from_bst();
+
+    BST_tests::bst_height();
+
+    BST_tests::random_elements();
 }
 
 int main() {
