@@ -14,11 +14,11 @@ private:
     void add(int val, Node_*& node);
     void remove(int val, Node_*& node);
     Node_*& find_min(Node_*& node);
-    Node_*& _right(Node_*& root);
-    Node_*& _left(Node_*& root);
+    Node_*& rotate_right(Node_*& root);
+    Node_*& rotate_left(Node_*& root);
     Node_*& left_right(Node_*& root);
     Node_*& right_left(Node_*& root);
-    int _height(Node_*& node);
+    int get_height(Node_*& node);
     void calc_height(Node_*& node);
     int get_balance(Node_*& node);
     Node_*& balance(Node_*& node);

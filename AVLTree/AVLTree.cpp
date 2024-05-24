@@ -71,7 +71,7 @@ Node_*& AVL::find_min(Node_*& node) {
     return find_min(node->left);
 }
 
-Node_*& AVL::_right(Node_*& node) {
+Node_*& AVL::rotate_right(Node_*& node) {
     Node_* temp = node;
     node = node->left;
     temp->left = node->right;
@@ -81,7 +81,7 @@ Node_*& AVL::_right(Node_*& node) {
     return node;
 }
 
-Node_*& AVL::_left(Node_*& node) {
+Node_*& AVL::rotate_left(Node_*& node) {
     Node_* temp = node;
     node = node->right;
     temp->right = node->left;
@@ -92,35 +92,35 @@ Node_*& AVL::_left(Node_*& node) {
 }
 
 Node_*& AVL::left_right(Node_*& node) {
-    node->left = _left(node->left);
-    node = _right(node);
+    node->left = rotate_left(node->left);
+    node = rotate_right(node);
     return node;
 }
 
 Node_*& AVL::right_left(Node_*& node) {
-    node->right = _right(node->right);
-    node = _left(node);
+    node->right = rotate_right(node->right);
+    node = rotate_left(node);
     return node;
 }
 
-int AVL::_height(Node_*& node) {
+int AVL::get_height(Node_*& node) {
     if (node == nullptr) return 0;
     return node->height;
 }
 
 void AVL::calc_height(Node_*& node) {
-    node->height = 1 + std::max(_height(node->left), _height(node->right));
+    node->height = 1 + std::max(get_height(node->left), get_height(node->right));
 }
 
 int AVL::get_balance(Node_*& node) {
     if (node == nullptr) return 0;
-    return _height(node->right) - _height(node->left);
+    return get_height(node->right) - get_height(node->left);
 }
 
 Node_*& AVL::balance(Node_*& node) {
     if (get_balance(node) == -2) {
         if (get_balance(node->left) == -1) {
-            node = _right(node);
+            node = rotate_right(node);
         }
         else {
             node = left_right(node);
@@ -128,7 +128,7 @@ Node_*& AVL::balance(Node_*& node) {
     }
     if (get_balance(node) == 2) {
         if (get_balance(node->right) == 1) {
-            node = _left(node);
+            node = rotate_left(node);
         }
         else {
             node = right_left(node);
