@@ -1,5 +1,6 @@
 #pragma once
 #include <random>
+#include <cmath>
 #include "AVLTree.h"
 
 class AVL_tests {
@@ -21,15 +22,6 @@ private:
         a.add(38);
         a.add(45);
     }
-    static int height(AVLNode*& node) {
-        if (node == nullptr) {
-            return 0;
-        }
-        int left_height = height(node->left);
-        int right_height = height(node->right);
-
-        return std::max(left_height, right_height) + 1;
-    }
 public:
     static void create_avl() {
         AVL a {};
@@ -47,13 +39,13 @@ public:
     }
     static void avl_height() {
         AVL a {};
-        int N = 10;
+        int N = 1000000;
         for (int i = 0; i < N; ++i) {
             a.add(i);
         }
-        int height1 = height(a.root);
-        int height2 = a.root->height;
-        std::cout << height1 << " " << height2 << std::endl;
+        int lg = log2(N);
+        int height = a.root->height;
+        std::cout << height << " " << lg << std::endl;
     }
     static void random_elements() {
         AVL a {};
