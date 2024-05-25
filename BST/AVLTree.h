@@ -1,31 +1,23 @@
 #pragma once
-
-struct Node_ {
-    int key;
-    Node_* left;
-    Node_* right;
-    int height;
-
-    Node_(int key) : key(key), left(nullptr), right(nullptr), height(1) {}
-};
+#include "Node.h"
 
 class AVL {
 private:
-    void add(int val, Node_*& node);
-    void remove(int val, Node_*& node);
-    Node_*& find_min(Node_*& node);
-    Node_*& rotate_right(Node_*& root);
-    Node_*& rotate_left(Node_*& root);
-    Node_*& left_right(Node_*& root);
-    Node_*& right_left(Node_*& root);
-    int get_height(Node_*& node);
-    void calc_height(Node_*& node);
-    int get_balance(Node_*& node);
-    Node_*& balance(Node_*& node);
+    void add(int val, AVLNode*& node);
+    void remove(int val, AVLNode*& node);
+    AVLNode*& find_min(AVLNode*& node);
+    AVLNode*& rotate_right(AVLNode*& root);
+    AVLNode*& rotate_left(AVLNode*& root);
+    AVLNode*& left_right(AVLNode*& root);
+    AVLNode*& right_left(AVLNode*& root);
+    int get_height(AVLNode*& node);
+    void calc_height(AVLNode*& node);
+    int get_balance(AVLNode*& node);
+    AVLNode*& balance(AVLNode*& node);
 public:
-    Node_* root;
+    AVLNode* root;
     AVL() : root(nullptr) {}
     void add(int val);
     void remove(int val);
-    void print(Node_*& node, int depth);
+    void print(AVLNode*& node, int depth);
 };

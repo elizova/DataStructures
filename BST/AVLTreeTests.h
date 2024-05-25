@@ -21,7 +21,7 @@ private:
         a.add(38);
         a.add(45);
     }
-    static int height(Node_*& node) {
+    static int height(AVLNode*& node) {
         if (node == nullptr) {
             return 0;
         }

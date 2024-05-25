@@ -13,7 +13,7 @@ private:
         b.insert(1);
         b.insert(5);
     }
-    static int height(Node*& node) {
+    static int height(BSTNode*& node) {
         if (node == nullptr) {
             return 0;
         }
