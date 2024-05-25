@@ -1,6 +1,6 @@
 #include "Heap/HeapTests.h"
 #include "BST/BSTTests.h"
-#include "AVLTree/AVLTreeTests.h"
+#include "BST/AVLTreeTests.h"
 
 void heap_tests() {
     Heap_tests::create_heap();
