@@ -1,5 +1,6 @@
 #include "Heap/HeapTests.h"
 #include "BST/BSTTests.h"
+#include "BST/AVLTreeTests.h"
 
 void heap_tests() {
     Heap_tests::create_heap();
@@ -25,9 +26,19 @@ void bst_tests() {
     BST_tests::random_elements();
 }
 
+void avl_tests() {
+    AVL_tests::create_avl();
+
+    AVL_tests::remove_from_avl();
+
+    AVL_tests::avl_height();
+
+    AVL_tests::random_elements();
+}
+
 int main() {
 
-    bst_tests();
+    avl_tests();
 
     return 0;
 }
